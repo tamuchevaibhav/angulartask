@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="col-lg-6">
+    <nav aria-label="Pagination" *ngIf="maxPages > 1">
+      <ul class="pagination">
+        <li class="disabled" (click)="cancelEvent($event)" *ngIf="(current - range) > 1">
+          <a href="">...</a>
+        </li>
+        <li *ngFor="let page of pages;" [class.active]="page == current">
+          <a href="javascript:;" (click)="setPage(page, itemsPerPage)">{{ page }}</a>
+        </li>
+        <li class="disabled" (click)="cancelEvent($event)" *ngIf="(current + range) < maxPages">
+          <a href="">...</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

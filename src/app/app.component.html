@@ -1,0 +1,10 @@
+<div class="topmenu">
+
+</div>
+
+<app-pagination
+  [maxPages]="pagination.maxPages"
+  [current]="pagination.current"
+  [postsPerPage]="pagination.postsPerPage"
+  [itemsPerPage]="pagination.itemsPerPage"
+  (changePage)="myChanges($event)"></app-pagination>
