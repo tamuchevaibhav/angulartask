@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   pagination = {
-    maxPages: 20,
+    maxPages: 5,
     current: 1,
     postsPerPage: 10,
     itemsPerPage: 10
