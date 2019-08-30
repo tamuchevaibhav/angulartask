@@ -23,18 +23,16 @@
   </div>
   <div class="row" style="width:100%;    padding: 2px 25%;">
     <div id="accordion" style="    width: 100%;">
-      <div class="card">
+
+      <div class="card" *ngFor="let data of list">
         <div class="card-header" id="headingOne">
           <div class="row" style="width:100%;">
-            <div class="col-sm-1" style="    background: url(https://microhealth.com/assets/images/illustrations/personal-user-illustration-@2x.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;">
-                 
+            <div class="col-sm-1">
+                 <img src="{{data.avatar_url}}" style="    height: 45px;     border-radius: 50%;     width: 45px;"/>
             </div>
             <div class="col-sm-9">
-                <div class="col-sm-12 ">VARUN DHAWAN</div>
-                <div class="col-sm-12 font-size11">Profile URL:</div>
+                <div class="col-sm-12 ">{{data.login}}</div>
+                <div class="col-sm-12 font-size11">Profile URL:{{data.url}}</div>
             </div>
             <div class="col-sm-2"></div>
           </div>
@@ -63,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <!-- <div class="card">
           <div class="card-header" id="headingOne">
             <div class="row" style="width:100%;">
               <div class="col-sm-1" style="    background: url(https://microhealth.com/assets/images/illustrations/personal-user-illustration-@2x.png);
@@ -102,7 +100,7 @@
               you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
           </div>
-        </div>
+        </div> -->
     </div>
   </div>
   <div class="row" style="width:100%;    padding: 2px 25%;">
