@@ -1,0 +1,80 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+/* .btn{
+  color: #fff!important;
+  background-color: #000!important;
+  border: none;
+  display: inline-block;
+  padding: 2px 2px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 60px;
+} */
+
+.btnedit{
+  min-width: 6px;
+  padding: 0px;
+}
+
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.imageDiv{
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 10px;
+}
+
+.closeBtn{
+  position: absolute;
+  margin-top: 3px;
+  margin-left: -21px;
+  background: #8a878770;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}

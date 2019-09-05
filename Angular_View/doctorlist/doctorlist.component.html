@@ -1,0 +1,60 @@
+<!-- <mat-table #table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}} </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element[column.id]}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> -->
+<div class="row" style="    margin: 30px;">
+  <div class="row" style="">
+    <div class="col-sm-12 imageDiv">
+        <span *ngFor='let url of urls;index as i'>
+          <img [src]="url" height="200" style="height:100px;width:100px;padding:10px;">
+          <span class="closeBtn" (click)="onDeleteFile(i)"> X </span>
+        </span>
+    </div>
+    <div class="col-sm-1 upload-btn-wrapper" style="text-align: right;padding: 0px;">
+      <button mat-button  class="btn">
+        +
+      </button>
+      <input hidden type='file' #myInput (change)="onSelectFile($event)" accept="image/*" multiple >
+    </div>
+    <div class="col-sm-1" style="text-align: right;padding: 0px;">
+        <button mat-button  class="btn" (click)="onuplodImage()">
+            Upload
+          </button>
+    </div>
+  </div>
+  <div class="row" style="    margin: 10px;">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="url">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Image</mat-header-cell>
+        <mat-cell *matCellDef="let group"><img src="{{ group.url }}" style="height: 50px;width:50px;border-radius:50%;"/></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="uploadedOn">
+        <mat-header-cell *matHeaderCellDef>Uploaded Date</mat-header-cell>
+        <mat-cell *matCellDef="let group">{{ group.uploadedOn | date:'medium'}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+        <mat-cell *matCellDef="let group" (click)="$event.stopPropagation()">
+          <button mat-button (click)="onDelete(group._id)" class="btnedit">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onEdit(row.position)"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+
+  
+</div>
+
+
+
+
