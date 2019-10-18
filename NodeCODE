@@ -1,0 +1,30 @@
+const express = require('express');
+const bodyParser = require('body-parser')
+const multer = require('multer')
+var fs = require('fs');
+var storage = multer.diskStorage({
+        destination: function (req, file, callback) {
+                callback(null, './public');
+        },
+        filename: function (req, file, callback) {
+                callback(null, file.fieldname + '-' + Date.now() + '.json');
+        }
+});
+
+var upload = multer({ storage: storage });
+
+const app = express();
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(upload.array())
+app.use(express.static('public'))
+app.post('/', upload.single('file'),(req, res) => {
+        console.log(req.body.key1);
+        fs.readFile(req.file.path, function(err, data) {
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.write(data);
+                res.end();
+        });
+})
+app.listen(3000);
